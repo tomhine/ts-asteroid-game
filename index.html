@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- URL bar color -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+    <!-- GSAP import -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+      integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+
+    <title>Asteroid!</title>
+  </head>
+  <body class="select-none bg-black">
+    <!-- Score UI -->
+    <div class="absolute top-0 left-0 w-full p-8 font-semibold text-white">
+      Score: <span data-score>0</span>
+    </div>
+
+    <!-- Game over UI -->
+    <div
+      class="absolute top-1/2 left-1/2 flex hidden h-40 w-80 -translate-y-20 -translate-x-40 flex-col items-center justify-center rounded-lg bg-white"
+      data-game-over-ui
+    >
+      <div class="space-y-4">
+        <p class="text-2xl font-bold">Game over!</p>
+        <button
+          class="cursor-pointer select-none rounded-full bg-blue-500 px-8 py-3 font-semibold text-white hover:bg-blue-600"
+          data-restart-button
+        >
+          Restart
+        </button>
+      </div>
+    </div>
+    <canvas></canvas>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
