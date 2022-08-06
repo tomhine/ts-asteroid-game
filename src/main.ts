@@ -25,12 +25,13 @@ let projectiles: Projectile[] = [];
 let enemies: Enemy[] = [];
 let particles: Particle[] = [];
 
-c.fillStyle = "rgba(0, 0, 0, 0.1)";
+c.fillStyle = "rgba(0, 0, 0, 0)";
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 ///////// ANIMATION LOOP
 
 let animationId: number;
+
 function animate() {
   animationId = requestAnimationFrame(animate);
   c.fillStyle = "rgba(0, 0, 0, 0.1)";
@@ -180,6 +181,9 @@ function startGame() {
 
 function restartGame() {
   toggleGameOverUi();
+
+  c.fillStyle = "rgba(0, 0, 0, 0)";
+  c.fillRect(0, 0, canvas.width, canvas.height);
   startGame();
 }
 
